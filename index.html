@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - Online Quiz Application</title>
+
+    <!-- CSS connection -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HOME PAGE -->
+    <section id="homeSection">
+        <h1>🧠 QuizMaster</h1>
+        <p>Test your knowledge and challenge yourself!</p>
+
+        <div class="form-group">
+            <label for="playerName">Enter Your Name</label>
+            <input type="text" id="playerName" placeholder="Your name">
+        </div>
+
+        <div class="form-group">
+            <label for="category">Choose Category</label>
+            <select id="category">
+                <option value="web">Web Development</option>
+                <option value="programming">Programming</option>
+                <option value="cs">Computer Science</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="difficulty">Choose Difficulty</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+
+        <button onclick="startQuiz()">🚀 Start Quiz</button>
+        <button onclick="showLeaderboard()">🏆 Leaderboard</button>
+        <button onclick="showDashboard()">📊 Dashboard</button>
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </section>
+
+    <!-- QUIZ PAGE -->
+    <section id="quizSection" style="display:none;">
+        <h2>Quiz Time!</h2>
+
+        <div class="quiz-info">
+            <p id="questionNumber"></p>
+            <p id="timer">⏱️ 20</p>
+        </div>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+        <h3 id="questionText"></h3>
+
+        <div id="optionsContainer"></div>
+
+        <button id="nextButton" onclick="nextQuestion()">Next ➡️</button>
+    </section>
+
+    <!-- RESULT PAGE -->
+    <section id="resultSection" style="display:none;">
+        <h1>🎉 Quiz Completed!</h1>
+
+        <h2 id="finalScore"></h2>
+        <p id="performanceMessage"></p>
+
+        <div class="result-stats">
+            <div class="stat-card">
+                <h3>✅ Correct</h3>
+                <p id="correctCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>❌ Wrong</h3>
+                <p id="wrongCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>⏳ Unanswered</h3>
+                <p id="unansweredCount">0</p>
+            </div>
+        </div>
+
+        <h2>📋 Answer Review</h2>
+        <div id="reviewSection"></div>
+
+        <button onclick="playAgain()">🔄 Play Again</button>
+        <button onclick="showLeaderboard()">🏆 Leaderboard</button>
+        <button onclick="showDashboard()">📊 Dashboard</button>
+        <button onclick="goHome()">🏠 Home</button>
+    </section>
+
+    <!-- LEADERBOARD PAGE -->
+    <section id="leaderboardSection" style="display:none;">
+        <h1>🏆 Leaderboard</h1>
+        <div id="leaderboardList"></div>
+
+        <button onclick="goHome()">🏠 Home</button>
+        <button onclick="playAgain()">🔄 Play Again</button>
+    </section>
+
+    <!-- DASHBOARD PAGE -->
+    <section id="dashboardSection" style="display:none;">
+        <h1>📊 Quiz Dashboard</h1>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Total Quizzes</h3>
+                <p id="totalQuizzes">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Average Score</h3>
+                <p id="averageScore">0%</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Best Score</h3>
+                <p id="bestScore">0%</p>
+            </div>
+        </div>
+
+        <h2>📈 Performance Chart</h2>
+        <div id="chartContainer"></div>
+
+        <h2>📜 Quiz History</h2>
+        <div id="historyList"></div>
+
+        <button onclick="goHome()">🏠 Home</button>
+        <button onclick="playAgain()">🔄 Play Again</button>
+        <button onclick="showLeaderboard()">🏆 Leaderboard</button>
+    </section>
+
+</div>
+
+<!-- JavaScript connection -->
+<script src="script.js"></script>
+
+</body>
+</html>
